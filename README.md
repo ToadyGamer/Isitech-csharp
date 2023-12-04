@@ -34,7 +34,7 @@ Paterne MVC :
 
 ### Commandes
 Voir les templates : ```dotnet new list```  
-Créer un projet mvc : ```dotnet new mvc```  
+Créer un projet mvc : ```dotnet new mvc``` (localhost://0000/swagger)  
 Créer un projet console : ```dotnet new console```  
 Afficher le code de façon "complete" correspondatn à l'ancienne syntaxe: ```dotnet new console --use-program-main ```  
 Pour lancer le programme : ```dotnet run```  
@@ -93,4 +93,9 @@ Program.cs : Configuration du programme
 Class de configuration : Gestion de l'injection de service et de dépendance
 
 .CSPROJ : Information sur l'app, sa version
+#
+
+### Configuration de l'application
+=> Se situe dans le fichier appsettings.json  
+ORM : Mapping entre objet et table en BDD
 #
