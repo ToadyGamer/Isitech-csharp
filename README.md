@@ -22,3 +22,10 @@ Paterne MVC :
  - Razor page => Création de page web
  - Model binding => Validation de model
 #
+### Commandes
+Voir les templates : ```dotnet new list```  
+Créer un projet mvc : ```dotnet new mvc```  
+Créer un projet console : ```dotnet new console```  
+Afficher le code de façon "complete" correspondatn à l'ancienne syntaxe: ```dotnet new console --use-program-main ```  
+Pour lancer le programme : ```dotnet run```
+#
