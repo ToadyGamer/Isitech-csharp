@@ -9,7 +9,14 @@ Net : Fonctionne sur toutes les plateformes (cross plateforme). De plus, il est 
 NuGet (NetCore) : Fonctionnalité libre de droit téléchargable.  
 NuGet (NetFramework) : Fonctionnalité venant de microsoft.  
 Problème : Les librairies de NetFramework ne sont pas toutes sur NetCore.  
+
+STS : Short Terme Support (une version toute les 6 semaines)  
+LTS : Long Terme Support (3 ans de percistance) 
+
+Librairies CoreFX : Toutes les classes de base de Net Core sous "System.*". Celui-ci est aussi quasi présent dans Net
+
 #
+
 ### Fonctionnalité
 Net Core :
  - Unification des API et des du Web  
@@ -22,10 +29,15 @@ Paterne MVC :
  - Razor page => Création de page web
  - Model binding => Validation de model
 #
+
 ### Commandes
 Voir les templates : ```dotnet new list```  
 Créer un projet mvc : ```dotnet new mvc```  
 Créer un projet console : ```dotnet new console```  
 Afficher le code de façon "complete" correspondatn à l'ancienne syntaxe: ```dotnet new console --use-program-main ```  
 Pour lancer le programme : ```dotnet run```
+#
+
+### Ressources
+Bien nommer sa doc : ```Conventional Commits```  
 #
