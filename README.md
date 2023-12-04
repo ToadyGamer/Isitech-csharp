@@ -9,4 +9,16 @@ Net : Fonctionne sur toutes les plateformes (cross plateforme). De plus, il est 
 NuGet (NetCore) : Fonctionnalité libre de droit téléchargable.  
 NuGet (NetFramework) : Fonctionnalité venant de microsoft.  
 Problème : Les librairies de NetFramework ne sont pas toutes sur NetCore.  
+#
+### Fonctionnalité
+Net Core :
+ - Unification des API et des du Web  
+ - Intégration de framework (ang, react, vue)  
+ - Facilement intégrable en cloud  
+ - Hébergement d'app facile
 
+Paterne MVC :
+ - Différentiation entre les couches logiques, métier et présentation
+ - Razor page => Création de page web
+ - Model binding => Validation de model
+#
