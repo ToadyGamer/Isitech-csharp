@@ -1,0 +1,34 @@
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\appsettings.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\1er logiciel web api.exe
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\1er logiciel web api.deps.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\1er logiciel web api.runtimeconfig.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\1er logiciel web api.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\1er logiciel web api.pdb
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\1er logiciel web api.csproj.AssemblyReference.cache
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\1er logiciel web api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\1er logiciel web api.AssemblyInfoInputs.cache
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\1er logiciel web api.AssemblyInfo.cs
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\1er logiciel web api.csproj.CoreCompileInputs.cache
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\1er logiciel web api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\1er logiciel web api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\1er logiciel web api.sourcelink.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\staticwebassets\msbuild.1er logiciel web api.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\staticwebassets\msbuild.build.1er logiciel web api.props
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.1er logiciel web api.props
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.1er logiciel web api.props
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\scopedcss\bundle\1er logiciel web api.styles.css
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\1er logiciel web api.csproj.CopyComplete
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\1er logiciel web api.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\refint\1er logiciel web api.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\1er logiciel web api.pdb
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\1er logiciel web api.genruntimeconfig.cache
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\ref\1er logiciel web api.dll

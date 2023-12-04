@@ -1,0 +1,31 @@
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\bin\Debug\net8.0\appsettings.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\bin\Debug\net8.0\1er logiciel mvc.staticwebassets.runtime.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\bin\Debug\net8.0\1er logiciel mvc.exe
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\bin\Debug\net8.0\1er logiciel mvc.deps.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\bin\Debug\net8.0\1er logiciel mvc.runtimeconfig.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\bin\Debug\net8.0\1er logiciel mvc.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\bin\Debug\net8.0\1er logiciel mvc.pdb
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\1er logiciel mvc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\1er logiciel mvc.AssemblyInfoInputs.cache
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\1er logiciel mvc.AssemblyInfo.cs
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\1er logiciel mvc.csproj.CoreCompileInputs.cache
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\1er logiciel mvc.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\1er logiciel mvc.RazorAssemblyInfo.cache
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\1er logiciel mvc.RazorAssemblyInfo.cs
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\1er logiciel mvc.sourcelink.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\staticwebassets\msbuild.1er logiciel mvc.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\staticwebassets\msbuild.build.1er logiciel mvc.props
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.1er logiciel mvc.props
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.1er logiciel mvc.props
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\scopedcss\bundle\1er logiciel mvc.styles.css
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\scopedcss\projectbundle\1er logiciel mvc.bundle.scp.css
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\1er logiciel mvc.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\refint\1er logiciel mvc.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\1er logiciel mvc.pdb
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\1er logiciel mvc.genruntimeconfig.cache
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel mvc\obj\Debug\net8.0\ref\1er logiciel mvc.dll

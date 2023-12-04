@@ -19,3 +19,7 @@ Les fonctionnalites suivantes doivent etre implementees, elles sont calcques sur
 - Ecrire un test unitaire (optionnel)
 - Persistance des donnes avec EF Core SQLite
 - Implementez les bonnes pratiques et les fonctionnalites .NET Core vues en cours (cf. Cours.md)
+
+# INFOS :
+Controller qui fera tout (Création, Suppression, Modification, Lecture)
+Le parttern permet d'envoler le résultat 

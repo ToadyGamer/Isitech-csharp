@@ -69,9 +69,28 @@ Création des accesseurs : ```public string oui {get; set;}```
 On peut aussi créer une séquence de valeurs :
 ```cs
 var myArray = new[] {1,2,3,4,5,6,7,8,9,10};
+//Création de la list
 
 var myRange = myArray[4..^2];
+//On part après le 4eme item et on enleve les 2 derniers
 
 Console.WriteLine(string.Join(",",myRange));
+//Affichage de "MyRange"
 ``` 
+#
+
+### Gestion des fichier
+Properties : Parametre de l'application (Option de lancement)
+
+wwwroot : Fichier destiné au projet web en production
+
+Controllers, Views, Models : Permet la gestion du projet
+
+appsettings.json : Parametre qui sont spécific pour un type d'environement (Différentes informations selon l'environement (Dev, Prod, Client, ect)). On met pettre des requetes pour l'API
+
+Program.cs : Configuration du programme
+
+Class de configuration : Gestion de l'injection de service et de dépendance
+
+.CSPROJ : Information sur l'app, sa version
 #
