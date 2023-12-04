@@ -1,0 +1,15 @@
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel concol\bin\Debug\net8.0\1er logiciel concol.exe
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel concol\bin\Debug\net8.0\1er logiciel concol.deps.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel concol\bin\Debug\net8.0\1er logiciel concol.runtimeconfig.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel concol\bin\Debug\net8.0\1er logiciel concol.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel concol\bin\Debug\net8.0\1er logiciel concol.pdb
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel concol\obj\Debug\net8.0\1er logiciel concol.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel concol\obj\Debug\net8.0\1er logiciel concol.AssemblyInfoInputs.cache
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel concol\obj\Debug\net8.0\1er logiciel concol.AssemblyInfo.cs
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel concol\obj\Debug\net8.0\1er logiciel concol.csproj.CoreCompileInputs.cache
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel concol\obj\Debug\net8.0\1er logiciel concol.sourcelink.json
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel concol\obj\Debug\net8.0\1er logiciel concol.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel concol\obj\Debug\net8.0\refint\1er logiciel concol.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel concol\obj\Debug\net8.0\1er logiciel concol.pdb
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel concol\obj\Debug\net8.0\1er logiciel concol.genruntimeconfig.cache
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel concol\obj\Debug\net8.0\ref\1er logiciel concol.dll

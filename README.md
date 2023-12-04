@@ -13,20 +13,10 @@ Problème : Les librairies de NetFramework ne sont pas toutes sur NetCore.
 STS : Short Terme Support (une version toute les 6 semaines)  
 LTS : Long Terme Support (3 ans de percistance) 
 Fork : Création d'une branche dans l'arbre de développement
-Tuple : Une variable qui contient plusieurs valeurs
-```cs
-//----------------------------------------------
-var letters = ("a", "b");
-letters.item1;
-//----------------------------------------------
-(string Bob, string Roger) letters = ("1", "2");
-var chiffres = (Bob:"1", Roger:"2");
-chiffres.Bob;
-//----------------------------------------------
-```
 
 Librairies CoreFX : Toutes les classes de base de Net Core sous "System.*". Celui-ci est aussi quasi présent dans Net  
 
+Passage par référence : Déplacement de l'allocation de la mémoire et de la valeur dans l'entiéreter du programme.
 #
 
 ### Fonctionnalité
@@ -47,13 +37,41 @@ Voir les templates : ```dotnet new list```
 Créer un projet mvc : ```dotnet new mvc```  
 Créer un projet console : ```dotnet new console```  
 Afficher le code de façon "complete" correspondatn à l'ancienne syntaxe: ```dotnet new console --use-program-main ```  
-Pour lancer le programme : ```dotnet run```
+Pour lancer le programme : ```dotnet run```  
+Restauration des dépendances : ```dotnet restore```  
+Pour build le projet : ```dotnet build```  
+Test unitaire : ```dotnet test```  
+Publier le projet : ```dotnet publish```  
+Créer un package NuGet : ```dotnet pack```  
 #
 
 ### Ressources
 Bien nommer sa doc : ```Conventional Commits```  
+Doc de .NET : ```https://learn.microsoft.com/en-us/dotnet/api/system?view=net-8.0```  
 #
 
 ### C#, C'est quoi ?
-Language de programmation orienté objet
+Language de programmation orienté objet.
+Tuple : Une variable qui contient plusieurs valeurs
+```cs
+//----------------------------------------------
+var letters = ("a", "b");
+letters.item1;
+//----------------------------------------------
+(string Bob, string Roger) letters = ("1", "2");
+var chiffres = (Bob:"1", Roger:"2");
+chiffres.Bob;
+//----------------------------------------------
+```
+
+Création des accesseurs : ```public string oui {get; set;}```  
+
+On peut aussi créer une séquence de valeurs :
+```cs
+var myArray = new[] {1,2,3,4,5,6,7,8,9,10};
+
+var myRange = myArray[4..^2];
+
+Console.WriteLine(string.Join(",",myRange));
+``` 
 #
