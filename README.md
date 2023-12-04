@@ -12,8 +12,20 @@ Problème : Les librairies de NetFramework ne sont pas toutes sur NetCore.
 
 STS : Short Terme Support (une version toute les 6 semaines)  
 LTS : Long Terme Support (3 ans de percistance) 
+Fork : Création d'une branche dans l'arbre de développement
+Tuple : Une variable qui contient plusieurs valeurs
+```cs
+//----------------------------------------------
+var letters = ("a", "b");
+letters.item1;
+//----------------------------------------------
+(string Bob, string Roger) letters = ("1", "2");
+var chiffres = (Bob:"1", Roger:"2");
+chiffres.Bob;
+//----------------------------------------------
+```
 
-Librairies CoreFX : Toutes les classes de base de Net Core sous "System.*". Celui-ci est aussi quasi présent dans Net
+Librairies CoreFX : Toutes les classes de base de Net Core sous "System.*". Celui-ci est aussi quasi présent dans Net  
 
 #
 
@@ -40,4 +52,8 @@ Pour lancer le programme : ```dotnet run```
 
 ### Ressources
 Bien nommer sa doc : ```Conventional Commits```  
+#
+
+### C#, C'est quoi ?
+Language de programmation orienté objet
 #
