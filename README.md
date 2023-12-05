@@ -107,6 +107,7 @@ Connexion entre code et API : ```dotnet add package Microsoft.EntityFrameworkCor
 Gérer les opérations des mises a jours de la BDD (Migrations) : ```dotnet add package Microsoft.EntityFrameworkCore.Design --version 8.0.0```  
 Base de donnée : ```dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 8.0.0``` 
 Doc => https://www.tutorialspoint.com/sqlite  
- 
 Tools licorne : ```dotnet tool update --global dotnet-ef```  
+Faire une migration : ````dotnet ef migrations add NomDeLaMigration``  
+Mettre a jour la bdd : ```dotnet ef migrations database update```
 #
