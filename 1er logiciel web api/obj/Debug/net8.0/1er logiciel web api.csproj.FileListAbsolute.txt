@@ -5,7 +5,6 @@ C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debu
 C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\1er logiciel web api.runtimeconfig.json
 C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\1er logiciel web api.dll
 C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\1er logiciel web api.pdb
-C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll

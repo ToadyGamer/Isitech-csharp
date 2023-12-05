@@ -97,5 +97,7 @@ Class de configuration : Gestion de l'injection de service et de dépendance
 
 ### Configuration de l'application
 => Se situe dans le fichier appsettings.json  
+Dans ce fichier, il peut y avoir plusieurs parametre pour les différents environnements.
 ORM : Mapping entre objet et table en BDD
+Controller : Il permet de gérer les requetes entrantes et les réponses aux clients. Fonction de nommage : NomController.cs
 #
