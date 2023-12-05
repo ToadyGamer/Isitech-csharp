@@ -9,12 +9,26 @@ namespace _1er_logiciel_web_api.Controllers;
 public class BookController : ControllerBase
 {
     private readonly AppDbContext _context;
-
-    BookController(AppDbContext context) => this._context = context;
+    public BookController(AppDbContext context) => _context = context;
 
     [HttpGet(Name = "GetBook")]
     public async Task<IEnumerable<Book>> Get()
     {
         return await _context.Books.ToListAsync();
     }
+
+    [HttpGet("{id}", Name = "GetBook")]
+    public async Task<ActionResult<Book>> Get(int id)
+    {
+        var book = await _context.Books.FindAsync(id);
+        if(book == null) return NotFound();
+        return book;
+    }
+
+    // [HttpGet(Name = "PushBook")]
+    // public async Task<IEnumerable<Book>> Push()
+    // {
+    //     //Faire le push
+    //     return await _context.Books.ToListAsync();
+    // }
 }
