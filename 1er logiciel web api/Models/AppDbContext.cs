@@ -8,8 +8,9 @@ public class AppDbContext : DbContext
     //Sert a se co à la BDD (info connexion, nom BDD, liens, ect)
     //private const string ConnectionString = @"Server=http://localhost:5222;Database=BookDb;Trusted_Connection=true;";
     
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
-        optionsBuilder.UseSqlite("Filename=C:/sqlite/Book.db");
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlite($"Filename={Directory.GetCurrentDirectory()}Book.db");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -22,5 +23,11 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Book>().Property(b => b.PublishDate).IsRequired();
         modelBuilder.Entity<Book>().Property(b => b.Description);
         modelBuilder.Entity<Book>().Property(b => b.Remarks);
+
+        new Book{
+            Id=1,
+            Price=10,
+            PublishDate= new DateTime(01/01/2001)
+        };
     }
 }
