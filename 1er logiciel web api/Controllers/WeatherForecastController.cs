@@ -1,3 +1,4 @@
+using _1er_logiciel_web_api.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace _1er_logiciel_web_api.Controllers;

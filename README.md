@@ -101,3 +101,12 @@ Dans ce fichier, il peut y avoir plusieurs parametre pour les différents enviro
 ORM : Mapping entre objet et table en BDD
 Controller : Il permet de gérer les requetes entrantes et les réponses aux clients. Fonction de nommage : NomController.cs
 #
+
+### Packages de NuGet
+Connexion entre code et API : ```dotnet add package Microsoft.EntityFrameworkCore --version 8.0.0```  
+Gérer les opérations des mises a jours de la BDD (Migrations) : ```dotnet add package Microsoft.EntityFrameworkCore.Design --version 8.0.0```  
+Base de donnée : ```dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 8.0.0``` 
+Doc => https://www.tutorialspoint.com/sqlite  
+ 
+Tools licorne : ```dotnet tool update --global dotnet-ef```  
+#
