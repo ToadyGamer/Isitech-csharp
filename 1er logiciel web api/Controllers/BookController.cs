@@ -1,6 +1,7 @@
-using System.Data.Common;
 using _1er_logiciel_web_api.Models;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 
 namespace _1er_logiciel_web_api.Controllers;
@@ -11,12 +12,17 @@ public class BookController : ControllerBase
 {
     //TODO : Respecter le standart REST
     private readonly AppDbContext _context; //Créer la référence de AppDbContext afin de pouvoir l'utiliser
+    private readonly IMapper _mapper;
 
-    public BookController(AppDbContext context)
+    public BookController(AppDbContext context, IMapper mapper)
     {
         _context = context; //Assigniation du context
+        _mapper = mapper;
     }
 
+    // TODO: PUT: api/Book/[id] creer la route qui permet de mettre a jour un livre existant
+    // TODO: utilisez des annotations pour valider les donnees entrantes avec ModelState
+    // TODO: utilisez le package AutoMapper pour mapper les donnees de BookUpdateDTO vers Book
     [HttpGet] //Affichage en format GET pour l'HTML
     public async Task<IEnumerable<Book>> Get() //Fonction pour afficher TOUS les libres
     {
@@ -45,6 +51,8 @@ public class BookController : ControllerBase
         if (addedBook != null)return BadRequest("Book already exists"); //Si on trouve un book, alors on return que le livre existe deja 
         else
         {
+            //MODELESTATE
+
             await _context.Books.AddAsync(book); //On ajoute le livre dans le body dans les livres
             await _context.SaveChangesAsync(); //On sauvegarde les changements
 
@@ -52,22 +60,47 @@ public class BookController : ControllerBase
                 routeName: nameof(GetBook), //Le nom de la route
                 routeValues: new { id = book.Id }, //L'id qui est créer
                 value: book); //Les informations du livre que l'on a ajouter
-
         }
     }
 
     // MODIFICATION
     [HttpPut("{id},title, author, genre, price, publishDate, description, remarks", Name = nameof(PUTBook))]
-    public async Task<ActionResult<Book>> PUTBook(int id, string ?title, string ?author, string ?genre, decimal price, DateTime publishDate, string ?description, string ?remarks)
+    public async Task<ActionResult<BookUpdateDTO>> PUTBook(int id, string ?title, string ?author, string ?genre, decimal ?price, DateTime ?publishDate, string ?description, string ?remarks)
     {
         var book = await _context.Books.FindAsync(id);
         if (book == null) return NotFound();
-        Book newbook = book;
+        BookUpdateDTO newbook = book;
+
+        // _mapper.Map(book, BookUpdateDTO);
+
+        // string titleCheck = ModelState.Values;
+        Console.WriteLine("OUIIIIIIIIIIIIIIIIIIII : " + ModelState.Values.First().RawValue);
+        Console.WriteLine("OUIIIIIIIIIIIIIIIIIIII : " + ModelState.Values.First());
+        Console.WriteLine("OUIIIIIIIIIIIIIIIIIIII : " + ModelState.Values.First().ValidationState);
+        Console.WriteLine("OUIIIIIIIIIIIIIIIIIIII : " + ModelState.Values.First().AttemptedValue);
+        Console.WriteLine("OUIIIIIIIIIIIIIIIIIIII : " + ModelState.Values.First(c => book.Id == id));
+        Console.WriteLine("OUIIIIIIIIIIIIIIIIIIII : " + ModelState.Values.Select(c => c.AttemptedValue));
+
+        foreach (var aValue in ModelState)
+        {
+            Console.WriteLine("================= KEY : " + aValue.Key.ToString());
+            Console.WriteLine("================= VALUE : " + aValue.Value.ToString());
+            Console.WriteLine("================= VALUE : " + aValue.Value.AttemptedValue);
+            Console.WriteLine("================= VALUE : " + aValue.Value.ValidationState);
+            Console.WriteLine("================= VALUE : " + aValue.Value.ValidationState);
+
+            foreach (var item in aValue.Value.Errors)
+            {
+                Console.WriteLine("+++++++++++++++++++++++++++++++++" + item);  
+            }
+        }
+
+
         if(title != null) newbook.Title = title;
         if(author != null) newbook.Author = author;
         if(genre != null) newbook.Genre = genre;
-        if(price != null) newbook.Price = price;
-        if(publishDate != null) newbook.PublishDate = publishDate;
+        if(price != null) newbook.Price = (decimal)price;
+        if(publishDate != null) newbook.PublishDate = (DateTime)publishDate;
         if(description != null) newbook.Description = description;
         if(remarks != null) newbook.Remarks = remarks;
         await _context.SaveChangesAsync();
@@ -79,7 +112,7 @@ public class BookController : ControllerBase
     [HttpPost("title, author, genre, price, publishDate, description, remarks", Name = nameof(POSTBook))]
     [ProducesResponseType(201, Type = typeof(Book))] //Affichage de la réussite et de la création d'un book
     [ProducesResponseType(400)] //Affichage d'une mauvaise requete
-    public async Task<ActionResult<Book>> POSTBook(int id, string ?title, string ?author, string ?genre, decimal price, DateTime publishDate, string ?description, string ?remarks)
+    public async Task<ActionResult<Book>> POSTBook(int id, string ?title, string ?author, string ?genre, decimal ?price, DateTime ?publishDate, string ?description, string ?remarks)
     {
         if(price == null || publishDate == null) return BadRequest();
 
@@ -87,8 +120,8 @@ public class BookController : ControllerBase
         if(title != null) newbook.Title = title;
         if(author != null) newbook.Author = author;
         if(genre != null) newbook.Genre = genre;
-        if(price != null) newbook.Price = price;
-        if(publishDate != null) newbook.PublishDate = publishDate;
+        if(price != null) newbook.Price = (decimal)price;
+        if(publishDate != null) newbook.PublishDate = (DateTime)publishDate;
         if(description != null) newbook.Description = description;
         if(remarks != null) newbook.Remarks = remarks;
         await _context.Books.AddAsync(newbook);
@@ -98,18 +131,17 @@ public class BookController : ControllerBase
     }
 
     // SUPPRESSION: api/Book/[id]
-    [HttpDelete("{id}", Name = nameof(DELETEBook))]
-    public async Task<ActionResult<Book>> DELETEBook(int id)
+    [HttpDelete("{id}", Name = nameof(DELETEBook))] //Affichage en format DELETE pour l'HTML
+    public async Task<ActionResult<Book>> DELETEBook(int id) //Fonction qui permet de supprimer un livre avec en parametre un ID
     {
-        Book? existantBook = await _context.Books.FindAsync(id);
-        if (existantBook == null) return NotFound();
+        Book? existantBook = await _context.Books.FindAsync(id); //On cherche si un livre existe
+        if (existantBook == null) return NotFound(); //Si on en trouve pas, on annonce que l'on en a pas trouvé
         else
         {
-            // we remove the book to the database
-            _context.Books.Remove(existantBook);
-            await _context.SaveChangesAsync();
+            _context.Books.Remove(existantBook); //Sinon on supprime le livre
+            await _context.SaveChangesAsync(); //Et on sauvegarde les données
         }
 
-        return NoContent();
+        return NoContent(); //Puis on retourne
     }
 }
