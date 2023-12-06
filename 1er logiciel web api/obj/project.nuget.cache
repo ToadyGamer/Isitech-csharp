@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "dsDUrbRPsD9Gowt+bKFyGvZgxYaGgxZG7Zs/9FGv4DTipLoefgH2t/o6WlN0fgyNQHFVeuIQnbCBpAxoZel16w==",
+  "dgSpecHash": "neLV8Hk1d+zwRCEzpHWkOcHzkSsEdCDV9sNAeHaoVD1sIiunSZAI7btTQF91tOiCT5Su+8o9ZkBrcbUbGSo+yw==",
   "success": true,
   "projectFilePath": "C:\\Users\\caste\\Desktop\\Ecole\\CSharp\\Isitech-csharp\\1er logiciel web api\\1er logiciel web api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\caste\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\caste\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\caste\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\caste\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\caste\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

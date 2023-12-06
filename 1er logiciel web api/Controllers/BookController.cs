@@ -1,7 +1,7 @@
 using _1er_logiciel_web_api.Models;
 using AutoMapper;
+using AutoMapperDemo;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 
 namespace _1er_logiciel_web_api.Controllers;
@@ -69,32 +69,10 @@ public class BookController : ControllerBase
     {
         var book = await _context.Books.FindAsync(id);
         if (book == null) return NotFound();
-        BookUpdateDTO newbook = book;
 
-        // _mapper.Map(book, BookUpdateDTO);
+        var mapper = MapperConfig.InitializeAutomapper();
 
-        // string titleCheck = ModelState.Values;
-        Console.WriteLine("OUIIIIIIIIIIIIIIIIIIII : " + ModelState.Values.First().RawValue);
-        Console.WriteLine("OUIIIIIIIIIIIIIIIIIIII : " + ModelState.Values.First());
-        Console.WriteLine("OUIIIIIIIIIIIIIIIIIIII : " + ModelState.Values.First().ValidationState);
-        Console.WriteLine("OUIIIIIIIIIIIIIIIIIIII : " + ModelState.Values.First().AttemptedValue);
-        Console.WriteLine("OUIIIIIIIIIIIIIIIIIIII : " + ModelState.Values.First(c => book.Id == id));
-        Console.WriteLine("OUIIIIIIIIIIIIIIIIIIII : " + ModelState.Values.Select(c => c.AttemptedValue));
-
-        foreach (var aValue in ModelState)
-        {
-            Console.WriteLine("================= KEY : " + aValue.Key.ToString());
-            Console.WriteLine("================= VALUE : " + aValue.Value.ToString());
-            Console.WriteLine("================= VALUE : " + aValue.Value.AttemptedValue);
-            Console.WriteLine("================= VALUE : " + aValue.Value.ValidationState);
-            Console.WriteLine("================= VALUE : " + aValue.Value.ValidationState);
-
-            foreach (var item in aValue.Value.Errors)
-            {
-                Console.WriteLine("+++++++++++++++++++++++++++++++++" + item);  
-            }
-        }
-
+        var newbook = mapper.Map<Book, BookUpdateDTO>(book);
 
         if(title != null) newbook.Title = title;
         if(author != null) newbook.Author = author;

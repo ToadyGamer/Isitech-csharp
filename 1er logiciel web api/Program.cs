@@ -1,5 +1,6 @@
 using _1er_logiciel_web_api.Models;
 using AutoMapper;
+using AutoMapperDemo;
 
 namespace _1er_logiciel_web_api;
 
@@ -9,9 +10,8 @@ public class Program
     {   
         var builder = WebApplication.CreateBuilder(args);
         // Add services to the container.
-        var config = new MapperConfiguration(cfg => cfg.CreateMap<Book, BookUpdateDTO>());
-        var mapper = config.CreateMapper();
 
+        builder.Services.AddAutoMapper(typeof(MapperConfig));
         builder.Services.AddDbContext<AppDbContext>();
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
