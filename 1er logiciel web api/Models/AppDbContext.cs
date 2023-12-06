@@ -11,7 +11,7 @@ public class AppDbContext : DbContext
         var currentDir = Directory.GetCurrentDirectory();
         var dbPath = Path.Combine(currentDir, "Books.db");
         Console.WriteLine($"ICIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII using db at {dbPath}");
-        optionsBuilder.UseSqlite($"Filename={dbPath}"); 
+        optionsBuilder.UseSqlite($"Filename={dbPath}");
     }
 
     // protected override void OnModelCreating(ModelBuilder modelBuilder)
