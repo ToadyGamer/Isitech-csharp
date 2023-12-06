@@ -14,10 +14,10 @@ public class BookController : ControllerBase
     private readonly AppDbContext _context; //Créer la référence de AppDbContext afin de pouvoir l'utiliser
     private readonly IMapper _mapper;
 
-    public BookController(AppDbContext context, IMapper mapper)
+    public BookController(AppDbContext context)
     {
         _context = context; //Assigniation du context
-        _mapper = mapper;
+        _mapper = MapperConfig.InitializeAutomapper();
     }
 
     // TODO: PUT: api/Book/[id] creer la route qui permet de mettre a jour un livre existant
@@ -67,12 +67,10 @@ public class BookController : ControllerBase
     [HttpPut("{id},title, author, genre, price, publishDate, description, remarks", Name = nameof(PUTBook))]
     public async Task<ActionResult<BookUpdateDTO>> PUTBook(int id, string ?title, string ?author, string ?genre, decimal ?price, DateTime ?publishDate, string ?description, string ?remarks)
     {
-        var book = await _context.Books.FindAsync(id);
-        if (book == null) return NotFound();
+        var book = await _context.Books.FindAsync(id); //On cherche un livre avec l'ID
+        if (book == null) return NotFound(); //Si on ne trouve pas, on retourne le fait de ne pas avoir trouver un livre
 
-        var mapper = MapperConfig.InitializeAutomapper();
-
-        var newbook = mapper.Map<Book, BookUpdateDTO>(book);
+        var newbook = _mapper.Map<Book, BookUpdateDTO>(book);//On convertie le livre en entrée pour créer un nouveau livre sans l'id pour l'utilisateur
 
         if(title != null) newbook.Title = title;
         if(author != null) newbook.Author = author;
@@ -81,9 +79,9 @@ public class BookController : ControllerBase
         if(publishDate != null) newbook.PublishDate = (DateTime)publishDate;
         if(description != null) newbook.Description = description;
         if(remarks != null) newbook.Remarks = remarks;
-        await _context.SaveChangesAsync();
+        await _context.SaveChangesAsync(); //On sauvegarde les données 
 
-        return newbook;
+        return newbook; //On retourne le nouveau livre
     }
 
     // AJOUT (2eme facon avec les différents éléments à rentré)
@@ -92,9 +90,9 @@ public class BookController : ControllerBase
     [ProducesResponseType(400)] //Affichage d'une mauvaise requete
     public async Task<ActionResult<Book>> POSTBook(int id, string ?title, string ?author, string ?genre, decimal ?price, DateTime ?publishDate, string ?description, string ?remarks)
     {
-        if(price == null || publishDate == null) return BadRequest();
+        if(price == null || publishDate == null) return BadRequest(); //Si la date est vide ou que le prix est vide, on ne rajoute rien et on affiche une mauvaise requete
 
-        Book newbook = new Book();
+        Book newbook = new Book(); //On crée un nouveau livre vide et on ajoute chaque valeur
         if(title != null) newbook.Title = title;
         if(author != null) newbook.Author = author;
         if(genre != null) newbook.Genre = genre;
@@ -102,10 +100,10 @@ public class BookController : ControllerBase
         if(publishDate != null) newbook.PublishDate = (DateTime)publishDate;
         if(description != null) newbook.Description = description;
         if(remarks != null) newbook.Remarks = remarks;
-        await _context.Books.AddAsync(newbook);
-        await _context.SaveChangesAsync();
+        await _context.Books.AddAsync(newbook); //On ajoute le livre
+        await _context.SaveChangesAsync(); //On sauvegarde les données
 
-        return newbook;
+        return newbook; //On retourne le livre ajouté
     }
 
     // SUPPRESSION: api/Book/[id]
