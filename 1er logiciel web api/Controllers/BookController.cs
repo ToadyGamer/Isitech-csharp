@@ -9,60 +9,49 @@ namespace _1er_logiciel_web_api.Controllers;
 [Route("api/[controller]")]
 public class BookController : ControllerBase
 {
-    private readonly AppDbContext _context; //Obtenir la référence de AppDbContext afin de ne pas avoir de doublons de référence
+    //TODO : Respecter le standart REST
+    private readonly AppDbContext _context; //Créer la référence de AppDbContext afin de pouvoir l'utiliser
 
     public BookController(AppDbContext context)
     {
-        _context = context;
+        _context = context; //Assigniation du context
     }
 
-    [HttpGet]
-    public async Task<IEnumerable<Book>> Get()
+    [HttpGet] //Affichage en format GET pour l'HTML
+    public async Task<IEnumerable<Book>> Get() //Fonction pour afficher TOUS les libres
     {
-        return await _context.Books.ToListAsync();
+        return await _context.Books.ToListAsync(); //On retourne TOUS les livres qui sont présent dans le context actuel en attendant que la requete soit finis avec le async
     }
 
     // GET: api/Book/[id]
-    [HttpGet("{id}", Name = nameof(GetBook))]
-    public async Task<ActionResult<Book>> GetBook(int id)
+    [HttpGet("{id}", Name = nameof(GetBook))] //Affichage en format GET pour l'HTML avec en input un ID
+    public async Task<ActionResult<Book>> GetBook(int id)  //Fonction pour afficher UN livre a partir de son ID
     {
-        var book = await _context.Books.FindAsync(id);
-        if (book == null)
-        {
-            return NotFound();
-        }
+        var book = await _context.Books.FindAsync(id); //On cherche un livre avec un ID spécifique
+        if (book == null) return NotFound(); //Si on ne trouve pas de livre, alors on retourne que l'on a rien trouvé
 
-        return book;
+        return book; //Sinon on retourne le livre trouvé
     }
 
     // POST: api/Book
-    [HttpPost]
-    [ProducesResponseType(201, Type = typeof(Book))]
-    [ProducesResponseType(400)]
-    public async Task<ActionResult<Book>> PostBook([FromBody] Book book)
+    [HttpPost] //Affichage en format POST pour l'HTML
+    [ProducesResponseType(201, Type = typeof(Book))] //Pour le dev : Affichage de la réussite et de la création d'un book
+    [ProducesResponseType(400)] //Pour le dev : Affichage d'une mauvaise requete
+    public async Task<ActionResult<Book>> PostBook([FromBody] Book book) //Fonction qui permet de créer un livre avec dans le body un libre a remplir
     {
-        // we check if the parameter is null
-        if (book == null)
-        {
-            return BadRequest();
-        }
-        // we check if the book already exists
-        Book? addedBook = await _context.Books.FirstOrDefaultAsync(b => b.Title == book.Title);
-        if (addedBook != null)
-        {
-            return BadRequest("Book already exists");
-        }
+        if (book == null) return BadRequest(); //Si le livre créer manque d'information (si il n'arrive pas a etre créer), alors on envoie un erreur pour le client
+
+        Book? addedBook = await _context.Books.FirstOrDefaultAsync(b => b.Title == book.Title); //On regarde si il existe deja un libre avec le même nom pour éviter les doublons
+        if (addedBook != null)return BadRequest("Book already exists"); //Si on trouve un book, alors on return que le livre existe deja 
         else
         {
-            // we add the book to the database
-            await _context.Books.AddAsync(book);
-            await _context.SaveChangesAsync();
+            await _context.Books.AddAsync(book); //On ajoute le livre dans le body dans les livres
+            await _context.SaveChangesAsync(); //On sauvegarde les changements
 
-            // we return the book
-            return CreatedAtRoute(
-                routeName: nameof(GetBook),
-                routeValues: new { id = book.Id },
-                value: book);
+            return CreatedAtRoute( //On retourne une route pour savoir ce qui ce passe
+                routeName: nameof(GetBook), //Le nom de la route
+                routeValues: new { id = book.Id }, //L'id qui est créer
+                value: book); //Les informations du livre que l'on a ajouter
 
         }
     }
@@ -88,6 +77,8 @@ public class BookController : ControllerBase
 
     // AJOUT (2eme facon avec les différents éléments à rentré)
     [HttpPost("title, author, genre, price, publishDate, description, remarks", Name = nameof(POSTBook))]
+    [ProducesResponseType(201, Type = typeof(Book))] //Affichage de la réussite et de la création d'un book
+    [ProducesResponseType(400)] //Affichage d'une mauvaise requete
     public async Task<ActionResult<Book>> POSTBook(int id, string ?title, string ?author, string ?genre, decimal price, DateTime publishDate, string ?description, string ?remarks)
     {
         if(price == null || publishDate == null) return BadRequest();
@@ -119,6 +110,6 @@ public class BookController : ControllerBase
             await _context.SaveChangesAsync();
         }
 
-        return existantBook;
+        return NoContent();
     }
 }

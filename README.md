@@ -100,6 +100,8 @@ Class de configuration : Gestion de l'injection de service et de dépendance
 Dans ce fichier, il peut y avoir plusieurs parametre pour les différents environnements.
 ORM : Mapping entre objet et table en BDD
 Controller : Il permet de gérer les requetes entrantes et les réponses aux clients. Fonction de nommage : NomController.cs
+DTO : Permet de dire qu'il y a une modification (UpdateBookDTO())
+Anotation : Permet de valider les informations dans le controller afin d'éviter les erreurs pour l'API
 #
 
 ### Packages de NuGet
@@ -110,4 +112,5 @@ Doc => https://www.tutorialspoint.com/sqlite
 Tools licorne : ```dotnet tool update --global dotnet-ef```  
 Faire une migration : ````dotnet ef migrations add NomDeLaMigration``  
 Mettre a jour la bdd : ```dotnet ef migrations database update```
+Création des entitées et des DTO : Automapeur 
 #
