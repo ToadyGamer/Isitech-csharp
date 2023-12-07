@@ -5,18 +5,18 @@ namespace _1er_logiciel_web_api.Models;
 public class AppDbContext : DbContext
 {
     public DbSet<Book> Books {get; set;} = default!; //Liste des livres dans la BDD
+    public DbSet<Client> Clients {get; set;} = default!; //Liste des clients dans la BDD
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         var currentDir = Directory.GetCurrentDirectory(); //On récupère le dossier dans lequel on est
-        var dbPath = Path.Combine(currentDir, "Books.db"); //On créer la bonne path pour accéder ou créer le fichier en rajoutant son nom et extension
+        var dbPath = Path.Combine(currentDir, "Librairy.db"); //On créer la bonne path pour accéder ou créer le fichier en rajoutant son nom et extension
         optionsBuilder.UseSqlite($"Filename={dbPath}"); //On ouvre ou créer le dosiser
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) //Lors de la création du model
     {
         modelBuilder.Entity<Book>().HasData( //On ajoute des données ayant le type "Book" avec les données suivantes
-
             new Book
             {
                 Id = 2,
@@ -76,6 +76,26 @@ public class AppDbContext : DbContext
                 Genre = "Software",
                 Price = 50,
                 PublishDate = new DateTime(2016, 05, 09)
+            });
+
+        modelBuilder.Entity<Client>().HasData( //On ajoute des données ayant le type "Book" avec les données suivantes
+            new Client
+            {
+                Id = 1,
+                Identifiant = "flopi",
+                Password = "motdepasse",
+                Nom = "CASTELLIER",
+                Prenom = "Florian",
+                Key = "QSF84J0F2J"
+            },
+            new Client
+            {
+                Id = 2,
+                Identifiant = "bob",
+                Password = "bob",
+                Nom = "BOB",
+                Prenom = "y",
+                Key = "JF92KD02J9"
             });
     }
 }

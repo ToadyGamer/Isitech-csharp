@@ -9,8 +9,10 @@ namespace AutoMapperDemo
             //Provide all the Mapping Configuration
             var config = new MapperConfiguration(cfg =>
             {
-                    //Configuring Employee and EmployeeDTO
+                    //Configuring Book and BookUpdateDTO
                     cfg.CreateMap<Book, BookUpdateDTO>().ReverseMap();
+                    //Configuring Client and ClientUpdateDTO
+                    cfg.CreateMap<Client, ClientUpdateDTO>().ReverseMap();
                     //Any Other Mapping Configuration ....
                 });
 
