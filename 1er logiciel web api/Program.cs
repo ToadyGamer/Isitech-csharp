@@ -11,9 +11,9 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
         // Add services to the container.
 
-        // builder.Services.AddAutoMapper(typeof(MapperConfig).Assembly);
+        // builder.Services.AddAutoMapper(typeof(MapperConfig));
 
-        builder.Services.AddDbContext<AppDbContext>();
+        builder.Services.AddDbContext<AppDbContext>(); //On ajoute le fichier "AppDbContext" dans la solution pour y accéder plus tard
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();

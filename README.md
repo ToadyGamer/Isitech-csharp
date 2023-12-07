@@ -17,6 +17,8 @@ Fork : Création d'une branche dans l'arbre de développement
 Librairies CoreFX : Toutes les classes de base de Net Core sous "System.*". Celui-ci est aussi quasi présent dans Net  
 
 Passage par référence : Déplacement de l'allocation de la mémoire et de la valeur dans l'entiéreter du programme.
+
+Swagger : Page web qui est une interface de voir les endpoints de l'API.
 #
 
 ### Fonctionnalité

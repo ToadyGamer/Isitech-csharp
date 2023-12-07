@@ -20,9 +20,6 @@ public class BookController : ControllerBase
         _mapper = MapperConfig.InitializeAutomapper();
     }
 
-    // TODO: PUT: api/Book/[id] creer la route qui permet de mettre a jour un livre existant
-    // TODO: utilisez des annotations pour valider les donnees entrantes avec ModelState
-    // TODO: utilisez le package AutoMapper pour mapper les donnees de BookUpdateDTO vers Book
     [HttpGet] //Affichage en format GET pour l'HTML
     public async Task<IEnumerable<Book>> Get() //Fonction pour afficher TOUS les libres
     {
@@ -46,7 +43,7 @@ public class BookController : ControllerBase
     public async Task<ActionResult<Book>> PostBook([FromBody] Book book) //Fonction qui permet de créer un livre avec dans le body un libre a remplir
     {
         if (book == null) return BadRequest(); //Si le livre créer manque d'information (si il n'arrive pas a etre créer), alors on envoie un erreur pour le client
-
+        if(!ModelState.IsValid) return BadRequest("Mauvais valeurs dans la mise en place des données"); //On regarde si les valeurs rentrées sont correcte et si elle ne le sont pas, alors on renvoie une erreur
         Book? addedBook = await _context.Books.FirstOrDefaultAsync(b => b.Title == book.Title); //On regarde si il existe deja un libre avec le même nom pour éviter les doublons
         if (addedBook != null)return BadRequest("Book already exists"); //Si on trouve un book, alors on return que le livre existe deja 
         else
@@ -57,7 +54,7 @@ public class BookController : ControllerBase
             await _context.SaveChangesAsync(); //On sauvegarde les changements
 
             return CreatedAtRoute( //On retourne une route pour savoir ce qui ce passe
-                routeName: nameof(GetBook), //Le nom de la route
+                routeName: nameof(PostBook), //Le nom de la route
                 routeValues: new { id = book.Id }, //L'id qui est créer
                 value: book); //Les informations du livre que l'on a ajouter
         }
@@ -69,7 +66,7 @@ public class BookController : ControllerBase
     {
         var book = await _context.Books.FindAsync(id); //On cherche un livre avec l'ID
         if (book == null) return NotFound(); //Si on ne trouve pas, on retourne le fait de ne pas avoir trouver un livre
-
+         if(!ModelState.IsValid) return BadRequest("Mauvais valeurs dans la mise en place des données"); //On regarde si les valeurs rentrées sont correcte et si elle ne le sont pas, alors on renvoie une erreur
         var newbook = _mapper.Map<Book, BookUpdateDTO>(book);//On convertie le livre en entrée pour créer un nouveau livre sans l'id pour l'utilisateur
 
         if(title != null) newbook.Title = title;
@@ -81,29 +78,42 @@ public class BookController : ControllerBase
         if(remarks != null) newbook.Remarks = remarks;
         await _context.SaveChangesAsync(); //On sauvegarde les données 
 
-        return newbook; //On retourne le nouveau livre
+
+        return CreatedAtRoute( //On retourne une route pour savoir ce qui ce passe
+            routeName: nameof(PUTBook), //Le nom de la route
+            routeValues: new { id = book.Id }, //L'id qui est créer
+            value: newbook); //Les informations du livre que l'on a ajouter
     }
 
     // AJOUT (2eme facon avec les différents éléments à rentré)
     [HttpPost("title, author, genre, price, publishDate, description, remarks", Name = nameof(POSTBook))]
     [ProducesResponseType(201, Type = typeof(Book))] //Affichage de la réussite et de la création d'un book
     [ProducesResponseType(400)] //Affichage d'une mauvaise requete
-    public async Task<ActionResult<Book>> POSTBook(int id, string ?title, string ?author, string ?genre, decimal ?price, DateTime ?publishDate, string ?description, string ?remarks)
+    public async Task<ActionResult<Book>> POSTBook(int id, string ?title, string ?author, string ?genre, decimal price, DateTime publishDate, string ?description, string ?remarks)
     {
-        if(price == null || publishDate == null) return BadRequest(); //Si la date est vide ou que le prix est vide, on ne rajoute rien et on affiche une mauvaise requete
+        Book ?findBook = await _context.Books.FindAsync(id); // On cherche un livre avec un ID rentré
+        if(findBook != null) return BadRequest("Un livre avec cet ID existe déjà"); //Si il existe deja, on le supprime
+        if(!ModelState.IsValid) return BadRequest("Mauvais valeurs dans la mise en place des données"); //On regarde si les valeurs rentrées sont correcte et si elle ne le sont pas, alors on renvoie une erreur
 
-        Book newbook = new Book(); //On crée un nouveau livre vide et on ajoute chaque valeur
-        if(title != null) newbook.Title = title;
-        if(author != null) newbook.Author = author;
-        if(genre != null) newbook.Genre = genre;
-        if(price != null) newbook.Price = (decimal)price;
-        if(publishDate != null) newbook.PublishDate = (DateTime)publishDate;
-        if(description != null) newbook.Description = description;
-        if(remarks != null) newbook.Remarks = remarks;
+        Book newbook =  new Book //On crée un nouveau livre vide et on ajoute chaque valeur
+        {
+            Id = id,
+            Title = title,
+            Author = author,
+            Genre = genre,
+            Price = price,
+            PublishDate = publishDate,
+            Description = description,
+            Remarks = remarks
+        };
+
         await _context.Books.AddAsync(newbook); //On ajoute le livre
         await _context.SaveChangesAsync(); //On sauvegarde les données
 
-        return newbook; //On retourne le livre ajouté
+        return CreatedAtRoute( //On retourne une route pour savoir ce qui ce passe
+            routeName: nameof(POSTBook), //Le nom de la route
+            routeValues: new { id = newbook.Id }, //L'id qui est créer
+            value: newbook); //Les informations du livre que l'on a ajouter
     }
 
     // SUPPRESSION: api/Book/[id]
@@ -118,6 +128,9 @@ public class BookController : ControllerBase
             await _context.SaveChangesAsync(); //Et on sauvegarde les données
         }
 
-        return NoContent(); //Puis on retourne
+        return CreatedAtRoute( //On retourne une route pour savoir ce qui ce passe
+            routeName: nameof(PUTBook), //Le nom de la route
+            routeValues: new { id = existantBook.Id }, //L'id qui est créer
+            value: NoContent());
     }
 }

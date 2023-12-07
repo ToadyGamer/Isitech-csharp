@@ -4,19 +4,18 @@ namespace _1er_logiciel_web_api.Models;
 
 public class AppDbContext : DbContext
 {
-    public DbSet<Book> Books {get; set;} = default!;
+    public DbSet<Book> Books {get; set;} = default!; //Liste des livres dans la BDD
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        var currentDir = Directory.GetCurrentDirectory();
-        var dbPath = Path.Combine(currentDir, "Books.db");
-        Console.WriteLine($"ICIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII using db at {dbPath}");
-        optionsBuilder.UseSqlite($"Filename={dbPath}");
+        var currentDir = Directory.GetCurrentDirectory(); //On récupère le dossier dans lequel on est
+        var dbPath = Path.Combine(currentDir, "Books.db"); //On créer la bonne path pour accéder ou créer le fichier en rajoutant son nom et extension
+        optionsBuilder.UseSqlite($"Filename={dbPath}"); //On ouvre ou créer le dosiser
     }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder) //Lors de la création du model
     {
-        modelBuilder.Entity<Book>().HasData(
+        modelBuilder.Entity<Book>().HasData( //On ajoute des données ayant le type "Book" avec les données suivantes
 
             new Book
             {

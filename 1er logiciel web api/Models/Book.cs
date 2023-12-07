@@ -1,6 +1,6 @@
 namespace _1er_logiciel_web_api;
 
-public class Book
+public class Book //Class book avec toutes les informations de celui-ci
 {
     public int Id { get; set; }
     public string? Title { get; set; }
