@@ -3,9 +3,11 @@ using AutoMapper;
 using AutoMapperDemo;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace _1er_logiciel_web_api.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class ClientController : ControllerBase

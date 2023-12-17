@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("1er logiciel web api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee2a9fe3a8f4e5c5fd847bc6c6b7eb9480b5838f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+303b58d0199dda83445fc40c30f2b7abdd7fd96f")]
 [assembly: System.Reflection.AssemblyProductAttribute("1er logiciel web api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("1er logiciel web api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

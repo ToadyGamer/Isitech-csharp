@@ -1,7 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\1er logiciel web api",
+    "\\1er logiciel web api\\Models",
+    "\\Exam",
+    "\\Exam\\CityInfo.API",
+    "\\Exam\\CityInfo.API\\Controllers",
+    "\\Exam\\CityInfo.API\\DbContexts",
+    "\\Exam\\CityInfo.API\\Entities",
+    "\\Exam\\CityInfo.API\\Migrations",
+    "\\Exam\\CityInfo.API\\Models"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\1er logiciel web api\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
