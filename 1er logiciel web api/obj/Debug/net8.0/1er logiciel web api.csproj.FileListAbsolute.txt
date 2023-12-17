@@ -153,3 +153,11 @@ C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debu
 C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\1er logiciel web api.pdb
 C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\1er logiciel web api.genruntimeconfig.cache
 C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\obj\Debug\net8.0\ref\1er logiciel web api.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\caste\Desktop\Ecole\CSharp\Isitech-csharp\1er logiciel web api\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
